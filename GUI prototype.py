@@ -16,7 +16,7 @@ label0.pack(padx=50, pady=30)
 label1 = Label(window, text="Do you want to use the default configuration?", font=(
     "Arial", 30), bg="white", fg="black", border=10, relief="raised")
 
-# Add a button to start
+# Add a button for user to getting started
 
 
 def Start():
@@ -37,7 +37,7 @@ button1 = Button(window, text="Press to start the Simulation",
 button1.config(bg="white", fg="black", border=5, relief="groove",
                activebackground="red", activeforeground="white")
 
-# Add radio buttons for user choices
+# Add radio buttons for user choices (Yes/No)
 
 
 def create_radiobuttons(parent, choices, variable, command):
@@ -87,13 +87,10 @@ def submit_all():
     for w in all_input:
         w.pack_forget()
 
-    # Now you can start the simulation
-    # simulate(rounds, speed, runmode)
-
 
 def ask_user_inputs():
 
-    # --- Number of rounds (Slider) ---
+    # Number of rounds (slider)
     rounds_label = Label(
         window, text="Number of rounds (1–100):",
         font=("Arial", 25), bg="white", border=5, relief="solid"
@@ -112,7 +109,7 @@ def ask_user_inputs():
     rounds_slider.pack(pady=(0, 20))
     all_input.append(rounds_slider)
 
-    # --- Initial plants and animals ---
+    # Innitial plants and animals
     row_frame = Frame(window, bg="#8dfc76")
     row_frame.pack(pady=5)
     all_input.append(row_frame)
@@ -154,7 +151,7 @@ def ask_user_inputs():
     animal_list.pack(anchor="e", pady=(0, 10))
     all_input.append(animal_list)
 
-    # --- Speed mode ---
+    # Speed mode
     speed_frame = Frame(window, bg="#8dfc76")
     speed_frame.pack(pady=10)
     all_input.append(speed_frame)
@@ -172,7 +169,7 @@ def ask_user_inputs():
         rb.pack(anchor="w")
         all_input.append(rb)
 
-    # --- Run mode ---
+    # Run mode
     run_frame = Frame(window, bg="#8dfc76")
     run_frame.pack(pady=10)
     all_input.append(run_frame)
@@ -190,7 +187,7 @@ def ask_user_inputs():
         rb.pack(anchor="w")
         all_input.append(rb)
 
-    # --- Submit button ---
+    # Submit button
     submit = Button(window, text="Submit", font=(
         "Arial", 20), border=1, relief="groove", command=submit_all)
     submit.pack(expand=True)
